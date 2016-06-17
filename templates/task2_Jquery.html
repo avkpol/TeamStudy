@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery</title>
+</head>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script>
+   $(document).ready(function() {
+       var count = 0;
+       var alert = 'click Button1 to show quadrate!'
+       $("#block1").hide();
+       $('h4').hide();
+       $("#btn1").click(function () {
+            if ($("div:first").is(":hidden")) {
+               $("#block1").slideDown("fast");
+                $('#alert').html(alert).hide();
+                $('#btn2').html('click to change color');
+                count += 1;
+                $('h4').show();
+                $('.badge').html(count);
+           } else {
+               $("#block1").slideUp("fast");
+
+                $('#btn2').html('Button2')
+           }
+       });
+
+       $("#btn2").click(function () {
+
+           if ($("div").is(":hidden")) {
+               $('#alert').html(alert).show();
+           }
+           else
+                $('#alert').html(alert).hide();
+
+                var bgColorArray = ['red','orange','green'],
+                selectBgColor = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
+
+               $("#block1").css('background-color', selectBgColor)
+
+       });
+
+   })
+</script>
+
+ <style>
+     h4{
+    margin-left:480px;
+    margin-top:20px;
+ }
+      #alert{
+    margin-top:70px;
+ }
+    #btn1{
+    margin-left:480px;
+    margin-top:20px;
+    width:16%;
+ }
+    #btn2{
+    margin-left:20px;
+    margin-top:20px;"
+ }
+    #block1  {
+    background-color:#bca;
+    width:200px;
+    height:200px;
+    text-align:center;
+    border:2px solid green;
+    margin:3px;
+    margin-left:480px;
+    font-size:14px;
+  }
+  button {
+    font-size:14px;
+  }
+  </style>
+
+        <h4> Quadrate dropped down  <span class="badge" id='counter'></span>  times</h4>
+        <button type="button" class="btn btn-default" id="btn1">Button1</button>
+        <button type="button" class="btn btn-success" id="btn2">Button2</button>
+        <span class="inline"id="alert"></span>
+        <div id="block1"></div>
+
+</body>
+</html>
