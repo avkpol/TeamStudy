@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'task3_store',
+    'task4_tour',
 )
 
 MIDDLEWARE_CLASSES = (
