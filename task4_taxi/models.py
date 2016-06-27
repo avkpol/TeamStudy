@@ -41,7 +41,8 @@ class CltOrder(models.Model):
             return True
 
     def message(self):
-        return ('Dear %s,' + MESAGE_TEXT %(self.name))
+        if self.after30 == True:
+            return ('Dear %s,' + MESAGE_TEXT %(self.name))
 
 
     def client_name(self):
