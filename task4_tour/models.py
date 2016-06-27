@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.timezone import now
 
 
+
 class Tourist(models.Model):
 
     name = models.CharField(max_length=50)

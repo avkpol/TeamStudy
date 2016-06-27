@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'task3_store',
     'task4_tour',
+    'task4_taxi',
 )
 
 MIDDLEWARE_CLASSES = (
