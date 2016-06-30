@@ -7,7 +7,15 @@ MESAGE_TEXT = '''
               Last time you used our servise was 30 days ago.
               You are welcome to order our taxi again and have discount 20%
               '''
+DESTINATION_CHOICES = (
 
+  ('Poltava', 'Poltava'),
+
+  ('Lubny', 'Lubny'),
+
+  ('Gorbanivka', 'Gorbanivka'),
+
+)
 
 class Driver(models.Model):
 
@@ -32,7 +40,7 @@ class CltOrder(models.Model):
     discount = models.BooleanField(default=False)
     orderDate = models.DateTimeField(auto_now=True, auto_now_add=False)
     client = models.ForeignKey('Client')
-    destination = models.CharField(max_length=100)
+    destination = models.CharField(max_length=100, choices=DESTINATION_CHOICES)
 
     def all(self):
 
@@ -81,7 +89,7 @@ class Client(models.Model):
 
     def has_discount(self):
         dcnt = CltOrder.discount
-        if self.every_5 is True:
+        if self.every_5 and CltOrder.payed is True:
              dcnt.update(default=True)
 
     def __unicode__(self):
