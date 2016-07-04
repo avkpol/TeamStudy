@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'task3_store',
     'task4_tour',
     'task4_taxi',
+    'task5_pizza',
 )
 
 MIDDLEWARE_CLASSES = (

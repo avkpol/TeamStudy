@@ -7,13 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('task3_store', '0021_auto_20160621_2116'),
+        ('task5_pizza', '0001_initial'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='storeproduct',
-            name='image',
-            field=models.ImageField(null=True, upload_to=b'img/', blank=True),
+            model_name='client',
+            name='ord',
+            field=models.ForeignKey(to='task5_pizza.Order', unique=True),
         ),
     ]
