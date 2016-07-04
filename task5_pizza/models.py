@@ -45,7 +45,7 @@ class Order(models.Model):
         if client:
             if len(client) <= 20:
                 t = total * 3 / 100
-            elif len(client) > 20:
+            elif len(client) > 20 and len(client) <= 100:
                 t = total * 4 / 100
             else:
                 t = total * 5 / 100
